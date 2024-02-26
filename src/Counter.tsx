@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import './Counter.css';
 
 interface CounterProps {
   value: number;
@@ -12,9 +13,9 @@ const Counter = (props: CounterProps) => {
 
   return (
     <div className='counter'>
-      <button onClick={onDecrement}>-</button>
-      <span>{value}</span>
-      <button onClick={onIncrement}>+</button>
+      <button className='counter-control decrement' onClick={onDecrement}>-</button>
+      <span className='counter-value'>{value}</span>
+      <button className='counter-control increment' onClick={onIncrement}>+</button>
     </div>
   );
 };

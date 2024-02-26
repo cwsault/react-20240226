@@ -1,0 +1,45 @@
+.counter {
+	width: fit-content;
+	padding: 0.25rem;
+	border-radius: 0.25rem;
+	background-color: #999;
+}
+
+.counter-control, .counter-value {
+	display: inline-block;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	padding: 0.25rem;
+	margin: 0 0.5rem;
+	text-align: center;
+}
+
+.counter-control {
+	box-sizing: content-box;
+	width: 1.5rem;
+	border-radius: 50%;
+	border: none;
+	color: black;
+	font-weight: 900;
+	cursor: pointer;
+}
+
+.counter-control.increment {
+	background-color: green;
+}
+
+.counter-control.decrement {
+	background-color: red;
+}
+
+.counter-control:active {
+	transform: translateY(0.1rem);
+}
+
+.counter-value {
+	width: 8rem;
+	border-radius: 0.25rem;
+	background-color: black;
+	color: #2d0;
+	font-weight: bold;
+}
