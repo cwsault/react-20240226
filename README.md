@@ -6,12 +6,15 @@ Some notes on implementation --
 
 ### `Counter.tsx`
  -  I've typically seen 'controlled component' in reference more to standard HTML inputs & similar, so I followed the pattern for `Counter` -- i.e., its state is provided by the parent & it triggers a callback on change with the new value
- -  While the above approach could also support having the parent component specify what to actually do -- as in specifying any callback to run, such as incrementing by a different value or doing something arbitrary -- I decided to keep the component hardcoded to provided the incremented/decremented value as it seemed more in keeping with the spec
+ -  While the above approach could also support having the parent component specify what to actually do -- as in specifying any callback to run, such as incrementing by a different value or doing something arbitrary -- I decided to keep the component hardcoded to provide the incremented/decremented value as it seemed more in keeping with the spec
  -  `useCallback()` used to fulfill the render optimization requirement; I suppose given that the callback provided by the parent doesn't have to update the state passed down it could actually be useful
 
 ### `TrafficLight.tsx`
  - Handled negative values as the counter spec didn't say to have them be positive only. Made it display the light in reverse/mirrored/absolute-value into the negatives i.e., 0 is red, -1 is yellow, -2 is green, etc. (rather than red -> green -> yellow -> red like decreasing through the positive numbers)
  - Memoized the color chooser which will be more performant if only the label changes
+
+### `App.tsx`
+ - The `useCallback()` uses here are a bit redundant as any method by which the `App` state may be changed would trigger them both (since updating either value causes `totalClicks` to change), but of course in a real-world scenario this would prevent them from being recreated when other state changes cause re-renders
 
 
 # Simple-React-Project
