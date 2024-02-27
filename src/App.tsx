@@ -27,7 +27,7 @@ const App = () => {
       <Counter value={counter1} onChange={updateCounter1} />
       <Counter value={counter2} onChange={updateCounter2} />
 
-      <TrafficLight />
+      <TrafficLight state={{ value: counter1, label: 'Light for Counter-1' }} />
     </div>
   );
 };

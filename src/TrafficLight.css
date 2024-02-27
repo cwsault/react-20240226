@@ -20,6 +20,7 @@
 	width: 64px;
 	height: 64px;
 	border-radius: 50%;
+	transition: background-color 0.333s;
 }
 
 .light.red {
@@ -29,7 +30,7 @@
 	background-color: green;
 }
 .light.yellow {
-	background-color: yellow;
+	background-color: #fd0;
 }
 
 .traffic-light .label {
