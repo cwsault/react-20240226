@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import Counter from './Counter';
+import TrafficLight from './TrafficLight';
 import './App.css';
 
 const App = () => {
@@ -25,6 +26,8 @@ const App = () => {
 
       <Counter value={counter1} onChange={updateCounter1} />
       <Counter value={counter2} onChange={updateCounter2} />
+
+      <TrafficLight />
     </div>
   );
 };
